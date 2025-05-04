@@ -78,7 +78,6 @@ src/
 
 ## 🙌 Future Enhancements
 
-- 🔁 **Add Reset Game button**
 - 🧠 **Add Single Player Mode (AI with Minimax)**
 - 🧑‍🤝‍🧑 **Add Multiplayer with WebSocket**
 - 🌙 **Dark Mode toggle**

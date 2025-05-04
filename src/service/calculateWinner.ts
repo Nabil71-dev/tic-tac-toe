@@ -13,8 +13,8 @@ export const calculateWinner = (squares: []) => {
     for (let i = 0; i < lines?.length; i++) {
         const [a, b, c] = lines[i];
 
-        if (squares[a] === squares[b] && squares[b] === squares[c] && squares[c] === squares[a]) {
-            return squares[a];
+        if (squares?.[a] === squares?.[b] && squares?.[b] === squares?.[c] && squares?.[c] === squares?.[a]) {
+            return squares?.[a];
         }
     }
 

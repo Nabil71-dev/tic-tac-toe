@@ -6,10 +6,11 @@ interface BoardType {
   squares: Array;
   isXNext: Boolean;
   onPlay: Function;
+  onReset: () => void;
 }
 
 export default function Board(props: BoardType) {
-  const { squares, isXNext, onPlay } = { ...props };
+  const { squares, isXNext, onPlay, onReset } = { ...props };
 
   const winner = calculateWinner(squares);
   const isMatchDraw = calculateMatchDraw(squares);
@@ -25,16 +26,25 @@ export default function Board(props: BoardType) {
       return;
     }
 
-    const newSquares = squares.slice();
+    const newSquares = squares?.slice();
     newSquares[i] = isXNext ? "X" : "O";
     onPlay(newSquares);
   };
+
+  const resetButton = winner || isMatchDraw ? (
+    <button
+      onClick={onReset}
+      className="px-3 py-1 rounded bg-gradient-to-r from-blue-400 to-blue-500 text-white font-semibold shadow-md hover:from-blue-500 hover:to-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
+    >
+      🔁 Reset Game
+    </button>
+  ) : null;
 
   return (
     <div className="flex flex-col items-center gap-4">
       <h2 className="text-lg font-semibold">{status}</h2>
       <div className="grid grid-cols-3 gap-2">
-        {squares.map((value: [], i: number) => (
+        {squares?.map((value: [], i: number) => (
           <Square
             key={i}
             value={value}
@@ -42,6 +52,7 @@ export default function Board(props: BoardType) {
           />
         ))}
       </div>
+      {resetButton}
     </div>
   );
 }
