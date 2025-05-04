@@ -22,7 +22,7 @@ A modern implementation of the classic **Tic-Tac-Toe** game built using **React*
 
 ```bash
 
-git clone https://github.com/your-username/tic-tac-toe-react.git
+git clone https://github.com/Nabil71-dev/tic-tac-toe.git
 cd tic-tac-toe-react
 
 ```
